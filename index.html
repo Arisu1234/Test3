@@ -86,13 +86,15 @@
         <img id="phone" src="phone.png">
         <img id="map" src="maps.png">
         <a-gltf-model id="suuri" src="suuri.gltf"></a-gltf-model>
-        <!-- Model source: https://sketchfab.com/3d-models/spinosaurus-2135501583704537907645bf723685e7
-             Model author: https://sketchfab.com/VapTor
-             Model license: CC Attribution -->
+        <a href="https://www.facebook.com/Duhan.gechihguyudo/"></a>
 
       </a-assets>
       
-      <a-camera position="0 1.2 0"></a-camera>
+      <a-camera position="0 1.2 0">
+        <a-cursor intersection-spawn="Event: click; mixin:voxel;"></a-cursor>
+      </a-camera>
+
+
       
       <!-- Environment for 2D and VR viewing. It's auto-hidden in AR mode. -->
       <a-entity environment="lighting: none; shadow: none; lightPosition: 0 2.15 0"
@@ -100,14 +102,14 @@
       
       <a-entity id="dino" position="-1 0 -3" scale="0.5 0.5 0.5">
         <a-entity position="2 2 3" scale="0.7 0.7 0.7">
-                  <a-image  height="4" width="2.3" src="#pro"></a-image>
+                  <a-image height="4" width="2.3" src="#pro"></a-image>
         <a-plane position="0 -1.65 0.1"  width="2.3" height="0.6"></a-plane>
         <a-text value="A. Bilguun" color="black" width="5" position="-1 -1.45 0.2"></a-text>
         <a-text value="3D designer" color="black" width="4" position="-1 -1.7 0.2"></a-text>
-        <a-image src="#fb" height="1" width="1" position="-2 1.5 0"></a-image>
-        <a-image src="#web" height="1" width="1" position="-2 0 0"></a-image>
-        <a-image src="#phone" height="1" width="1" position="2 1.5 0"></a-image>
-        <a-image src="#map" height="1" width="1" position="2 0 0"></a-image>
+        <a-image id="fblink" src="#fb" height="1" width="1" position="-2 1.5 0" ></a-image>
+        <a-image id="weblink" src="#web" height="1" width="1" position="-2 0 0"></a-image>
+        <a-image id="phonelink" src="#phone" height="1" width="1" position="2 1.5 0"></a-image>
+        <a-image id="maplink" src="#map" height="1" width="1" position="2 0 0"></a-image>
         <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="-2 1.5 -0.195"></a-gltf-model>
         <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="-2 0 -0.195"></a-gltf-model>
         <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="2 1.5 -0.195"></a-gltf-model>
@@ -137,18 +139,36 @@
                visible="false"></a-plane>
     </a-scene>
 
-    <script>
-      function setSize(scale) {
-        document.getElementById('dino').setAttribute('scale', {x: scale, y: scale, z: scale});
-      }
-      document.getElementById('btn_full').onclick = setSize.bind(this, 1);
-      document.getElementById('btn_half').onclick = setSize.bind(this, 0.5);
-      document.getElementById('btn_quarter').onclick = setSize.bind(this, 0.25);
-    </script>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
   </body>
+  <script>
+    document
+      .querySelector("#fblink")
+      .addEventListener("mouseenter", e => {
+         location.href = "https://www.facebook.com/Duhan.gechihguyudo/"
+      });
+
+      document
+      .querySelector("#weblink")
+      .addEventListener("mouseenter", e => {
+         location.href = "https://www.bodi-electronics.mn/"
+      });
+
+
+      document
+      .querySelector("#phonelink")
+      .addEventListener("mouseenter", e => {
+         location.href = ""
+      });
+
+
+
+      document
+      .querySelector("#maplink")
+      .addEventListener("mouseenter", e => {
+         location.href = "https://goo.gl/maps/jQgBjEs8jkwr9d449"
+
+      });
+
+  </script>
 </html>
